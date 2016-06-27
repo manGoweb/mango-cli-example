@@ -26,7 +26,18 @@ var init = (component) => {
 		if(DEBUG) console.time('\tcomponent: ' + component.name)
 
 		var Component = components[component.name] // class
-		var placement = (typeof component.place == 'string') ? document.querySelector(component.place) : component.place // DOM element
+
+		var placement
+		if (typeof component.place == 'string') {
+			placement = document.querySelectorAll(component.place)
+
+			if (placement.length == 1) {
+				placement = placement[0]
+			}
+		} else {
+			placement = component.place // DOM element
+		}
+
 		var instance = new Component(placement, component.data || {}) // new instance
 
 		instances.push(instance)
