@@ -25,6 +25,10 @@
   "templates": [
     "src/templates/*.jade"
   ],
+  "buildstamp": [
+    "dist/styles/*.css",
+    "dist/scripts/index.js"
+  ],
   "dependencies": [
     "lt-ie-9",
     "stylus-normalize",
