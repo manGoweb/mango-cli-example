@@ -36,5 +36,5 @@
   "hooks": {
     "init": "mango install"
   },
-  "version": ">=0.17"
+  "version": ">=0.27"
 }
