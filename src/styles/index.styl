@@ -1,6 +1,12 @@
 
 // ## Mixins
 // http://visionmedia.github.io/nib/
+
+// These variables prevent nib from trying to do autoprefixer's job with regards to flexbox (it generates things like
+// "display: box;", which is what the autoprefixer should do). Using this gets rid of autoprefixer's complaints.
+flex-version = flex
+support-for-ie = false
+vendor-prefixes = official
 @import 'nib'
 
 // ## Settings and variables
