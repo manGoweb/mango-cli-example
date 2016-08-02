@@ -27,7 +27,6 @@
   ],
   "dependencies": [
     "lt-ie-9",
-    "stylus-normalize",
     "jquery"
   ],
   "data": {
