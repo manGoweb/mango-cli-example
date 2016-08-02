@@ -5,7 +5,7 @@ var head = document.head || document.getElementsByTagName('head')[0]
  *
  * @param  {string|Object}  scripts src or Object script attributes with optional 'content' as inline javascript
  * @param  {Function}       load callback
- * 
+ *
  * @author Matěj Šimek <email@matejsimek.com> (http://www.matejsimek.com)
  */
 module.exports = function inject(options, callback) {
@@ -24,7 +24,7 @@ module.exports = function inject(options, callback) {
 	// key 'content' is alias for inline script content
 	else if(typeof options == 'object') {
 
-		for(key in options) {
+		for(let key in options) {
 			if(!options.hasOwnProperty(key)) continue
 			var value = options[key]
 
@@ -33,7 +33,7 @@ module.exports = function inject(options, callback) {
 			} else {
 				script[key] = value
 			}
-		})
+		}
 
 	}
 
