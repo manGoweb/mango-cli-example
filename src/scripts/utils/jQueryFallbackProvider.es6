@@ -1,7 +1,7 @@
 var inject = require('./inject')
 
 
-var jQueryFallbackProvider = function(resolveCallback, rejectCallback, fallbackUrl) {
+var jQueryFallbackProvider = function(fallbackUrl, resolveCallback, rejectCallback) {
 	var $ = window.jQuery
 
 	// jQuery is defined
