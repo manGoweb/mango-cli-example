@@ -2,7 +2,7 @@ var jQueryFallbackProvider = require('./utils/jQueryFallbackProvider')
 var componentsHandler = require('./componentsHandler')
 
 
-var onJQueryAvailable = function($) {
+var onJQueryAvailable = ($) => {
 	require('./plugins')
 	componentsHandler({
 		'example': require('./components/example'),
@@ -10,7 +10,7 @@ var onJQueryAvailable = function($) {
 	})
 }
 
-var onJQueryMissing = function() {
+var onJQueryMissing = () => {
 	console.log('jQuery dependency is missing. This page might not work correctly. Please try again later.')
 }
 

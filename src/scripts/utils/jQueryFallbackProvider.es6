@@ -19,7 +19,7 @@ var jQueryFallbackProvider = function(fallbackUrl, resolveCallback, rejectCallba
 	//jQuery is undefined with fallback available
 	inject(
 		fallbackUrl,
-		function() {
+		() => {
 			resolveCallback(window.jQuery)
 		},
 		rejectCallback
