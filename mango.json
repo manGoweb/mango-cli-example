@@ -20,7 +20,8 @@
   ],
   "static": [
     "src/fonts/**",
-    "node_modules/lt-ie-9/lt-ie-9.min.js"
+    "node_modules/lt-ie-9/lt-ie-9.min.js",
+    "node_modules/jquery/dist/jquery.min.js"
   ],
   "templates": [
     "src/templates/*.jade"
