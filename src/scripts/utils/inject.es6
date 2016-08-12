@@ -1,17 +1,19 @@
-var head = document.head || document.getElementsByTagName('head')[0]
+const head = document.head || document.getElementsByTagName('head')[0]
 
 /**
  * Injects script into the current page
  *
  * @param  {string|Object}  scripts src or Object script attributes with optional 'content' as inline javascript
- * @param  {Function}       load callback
+ * @param  {Function}       load success callback
+ * @param  {Function}       load failed callback
  *
  * @author Matěj Šimek <email@matejsimek.com> (http://www.matejsimek.com)
  */
-module.exports = function inject(options, callback) {
+module.exports = function inject(options, successCallback, failCallback) {
 	var script = document.createElement('script')
 
-	script.addEventListener('load', callback)
+	script.addEventListener('load', successCallback)
+	script.addEventListener('error', failCallback)
 	script.type = 'text/javascript'
 
 	// options is an URL string
