@@ -1,9 +1,9 @@
 var requiresJQuery = require('./utils/requiresJQuery')
 var components = require('./utils/components')
-require('./plugins')
 
 
 function jQueryAvailable($) {
+	require('./plugins')
 	components({
 		'example': require('./utils/components/example'),
 		'shapes': require('./utils/components/shapes')
