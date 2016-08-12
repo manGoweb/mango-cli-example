@@ -1,4 +1,4 @@
-var requiresJQuery = require('./utils/requiresJQuery')
+var jQueryFallbackProvider = require('./utils/jQueryFallbackProvider')
 var components = require('./utils/components')
 
 
@@ -15,7 +15,7 @@ function jQueryMissing() {
 }
 
 
-requiresJQuery(
+jQueryFallbackProvider(
 	jQueryAvailable,
 	jQueryMissing,
 	'/node_modules/jquery/dist/jquery.min.js'
