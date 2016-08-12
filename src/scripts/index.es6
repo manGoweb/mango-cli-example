@@ -2,7 +2,7 @@ var jQueryFallbackProvider = require('./utils/jQueryFallbackProvider')
 var components = require('./utils/components')
 
 
-function jQueryAvailable($) {
+var onJQueryAvailable = function($) {
 	require('./plugins')
 	components({
 		'example': require('./utils/components/example'),
@@ -10,13 +10,13 @@ function jQueryAvailable($) {
 	})
 }
 
-function jQueryMissing() {
-	alert('jQuery dependency is missing. This page might not work correctly. Please try again later.')
+var onJQueryMissing = function() {
+	console.log('jQuery dependency is missing. This page might not work correctly. Please try again later.')
 }
 
 
 jQueryFallbackProvider(
-	jQueryAvailable,
-	jQueryMissing,
+	onJQueryAvailable,
+	onJQueryMissing,
 	'/node_modules/jquery/dist/jquery.min.js'
 )
