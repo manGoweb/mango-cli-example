@@ -1,12 +1,12 @@
 var jQueryFallbackProvider = require('./utils/jQueryFallbackProvider')
-var componentsHandler = require('./utils/componentsHandler')
+var componentsHandler = require('./componentsHandler')
 
 
 var onJQueryAvailable = function($) {
 	require('./plugins')
 	componentsHandler({
-		'example': require('./utils/components/example'),
-		'shapes': require('./utils/components/shapes')
+		'example': require('./components/example'),
+		'shapes': require('./components/shapes')
 	})
 }
 
