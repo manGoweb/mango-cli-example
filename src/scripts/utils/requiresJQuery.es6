@@ -1,3 +1,6 @@
+var inject = require('./inject')
+
+
 var requiresJQuery = function(resolveCallback, rejectCallback, fallbackUrl) {
 	var $ = window.jQuery
 
@@ -14,26 +17,13 @@ var requiresJQuery = function(resolveCallback, rejectCallback, fallbackUrl) {
 	}
 
 	//jQuery is undefined with fallback available
-	var loadedCallback = function() {
-		resolveCallback(window.jQuery)
-	}
-
-	var script = document.createElement('script')
-	var loaded = false
-	script.src = fallbackUrl
-
-	script.onerror = function() {
-		rejectCallback()
-	}
-	script.onreadystatechange = script.onload = function() {
-		if (loaded) {
-			return
-		}
-		loadedCallback()
-		loaded = true
-	}
-
-	document.getElementsByTagName('head')[0].appendChild(script)
+	inject(
+		fallbackUrl,
+		function() {
+			resolveCallback(window.jQuery)
+		},
+		rejectCallback
+	)
 
 }
 
