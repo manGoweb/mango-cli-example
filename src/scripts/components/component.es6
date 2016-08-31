@@ -37,8 +37,6 @@ class Component {
 	 * Format:
 	 *  - "type": "handlerName"
 	 *  - "type<space>.selector": "handlerName"
-	 *
-	 * @param {Component~eventHandler} event handler which is a component method
 	 */
 	get listeners() {
 		return {
@@ -73,8 +71,8 @@ class Component {
 			 * @param {Object} data - optional data passed with event
 			 * @this {Element} - an element that caught the event
 			 */
-			let listener = function (e, data) {
-				callback.call(this, e, self, data)
+			let listener = function (event, data) {
+				callback.call(this, event, self, data)
 			}
 
 			if (selector) {
@@ -105,7 +103,7 @@ class Component {
 
 	/**
 	 * Returns a child
-	 * @param  {string} CSS selector
+	 * @param  {string} selector - CSS selector
 	 * @return {jQuery|null}
 	 */
 	child(selector) {
