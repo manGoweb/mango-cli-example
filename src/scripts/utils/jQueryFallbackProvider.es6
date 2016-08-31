@@ -1,7 +1,7 @@
 var inject = require('./inject')
 
 
-var jQueryFallbackProvider = function (fallbackUrl, resolveCallback, rejectCallback) {
+module.exports = function (fallbackUrl, resolveCallback, rejectCallback) {
 	var $ = window.jQuery
 
 	// jQuery is defined
@@ -26,5 +26,3 @@ var jQueryFallbackProvider = function (fallbackUrl, resolveCallback, rejectCallb
 	)
 
 }
-
-module.exports = jQueryFallbackProvider

@@ -13,7 +13,7 @@ var eventSplitter = /^(\S+)\s*(.*)$/
  *
  * @author Matěj Šimek <email@matejsimek.com> (http://www.matejsimek.com)
  */
-class Component {
+module.exports = class Component {
 
 	/**
 	 * @constructor
@@ -116,5 +116,3 @@ class Component {
 	}
 
 }
-
-module.exports = Component

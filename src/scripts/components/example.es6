@@ -8,7 +8,7 @@ var Component = require('./component')
  * - DOM event listeners are in Backbone style
  *
  */
-class Example extends Component {
+module.exports = class extends Component {
 
 	get listeners() {
 		return {
@@ -22,5 +22,3 @@ class Example extends Component {
 	}
 
 }
-
-module.exports = Example

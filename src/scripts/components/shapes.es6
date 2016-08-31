@@ -6,7 +6,7 @@ var $ = window.jQuery
  *
  * - injects SVG sprite into body
  */
-class Shapes extends Component {
+module.exports = class extends Component {
 
 	/**
 	 * @param {HTMLElement} element
@@ -33,6 +33,3 @@ class Shapes extends Component {
 	}
 
 }
-
-
-module.exports = Shapes
