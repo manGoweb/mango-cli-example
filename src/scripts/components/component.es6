@@ -107,11 +107,12 @@ class Component {
 	 * @return {jQuery|null}
 	 */
 	child(selector) {
-		var result = this.$el.find(selector)
-		if (!result.length) {
+		var $result = this.$el.find(selector)
+
+		if (!$result.length) {
 			return null
 		}
-		return result.eq(0)
+		return $result.eq(0)
 	}
 
 }
