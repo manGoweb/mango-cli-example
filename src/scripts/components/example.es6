@@ -10,6 +10,10 @@ var Component = require('./component')
  */
 module.exports = class extends Component {
 
+	constructor(el, data) {
+		super(el, data)
+	}
+
 	get listeners() {
 		return {
 			'click .example-child': 'handleClick'
