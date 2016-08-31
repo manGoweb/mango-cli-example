@@ -16,12 +16,15 @@ class Shapes extends Component {
 		super(element, data)
 
 		this.supportsSVG = document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#BasicStructure", "1.1")
-		if(this.supportsSVG) this.injectSprite()
+
+		if (this.supportsSVG) {
+			this.injectSprite()
+		}
 	}
 
 	injectSprite() {
 		$.get(this.data.url, (response, status) => {
-			if(status == 'success') {
+			if (status == 'success') {
 				$(document.body).prepend(response)
 			} else {
 				this.injectSprite()
