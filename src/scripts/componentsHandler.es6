@@ -10,7 +10,7 @@ module.exports = function (components) {
 	// Init function
 	var init = (component) => {
 		if (component.name in components) {
-			DEBUG && console.time('\tcomponent: ' + component.name)
+			DEBUG && console.time(`\tcomponent: ${component.name}`)
 
 			var Component = components[component.name] // class
 			var placement = (typeof component.place == 'string') ? document.querySelector(component.place) : component.place // DOM element
@@ -18,9 +18,9 @@ module.exports = function (components) {
 
 			instances.push(instance)
 
-			DEBUG && console.timeEnd('\tcomponent: ' + component.name)
+			DEBUG && console.timeEnd(`\tcomponent: ${component.name}`)
 		} else if (DEBUG) {
-			console.warn('Component with name ' + component.name + ' was not found!')
+			console.warn(`Component with name ${component.name} was not found!`)
 		}
 	}
 	// Instance only required components
@@ -41,11 +41,11 @@ module.exports = function (components) {
 		function printPerfStats() {
 			var timing = window.performance.timing
 			console.log('Performance:\n' +
-				'\tdns: \t\t' + (timing.domainLookupEnd - timing.domainLookupStart) + 'ms\n' +
-				'\tconnect: \t' + (timing.connectEnd - timing.connectStart) + 'ms\n' +
-				'\tttfb: \t\t' + (timing.responseStart - timing.connectEnd) + 'ms\n' +
-				'\tbasePage: \t' + (timing.responseEnd - timing.responseStart) + 'ms\n' +
-				'\tfrontEnd: \t' + (timing.loadEventStart - timing.responseEnd) + 'ms\n'
+				`\tdns: \t\t ${timing.domainLookupEnd - timing.domainLookupStart} ms\n` +
+				`\tconnect: \t ${timing.connectEnd - timing.connectStart} ms\n` +
+				`\tttfb: \t\t ${timing.responseStart - timing.connectEnd} ms\n` +
+				`\tbasePage: \t ${timing.responseEnd - timing.responseStart} ms\n` +
+				`\tfrontEnd: \t ${timing.loadEventStart - timing.responseEnd} ms\n`
 			)
 		}
 
