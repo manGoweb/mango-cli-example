@@ -1,6 +1,6 @@
-module.exports = function(components) {
-	if(DEBUG) console.log('Initializing components...')
-	if(DEBUG) console.time('Components initialization')
+module.exports = function (components) {
+	DEBUG && console.log('Initializing components...')
+	DEBUG && console.time('Components initialization')
 
 	//
 	// Lazy components initialization from initComponents queue
@@ -9,8 +9,8 @@ module.exports = function(components) {
 
 	// Init function
 	var init = (component) => {
-		if(component.name in components){
-			if(DEBUG) console.time('\tcomponent: ' + component.name)
+		if (component.name in components) {
+			DEBUG && console.time(`\tcomponent: ${component.name}`)
 
 			var Component = components[component.name] // class
 			var placement = (typeof component.place == 'string') ? document.querySelector(component.place) : component.place // DOM element
@@ -18,9 +18,9 @@ module.exports = function(components) {
 
 			instances.push(instance)
 
-			if(DEBUG) console.timeEnd('\tcomponent: ' + component.name)
-		} else {
-			if(DEBUG) console.warn('Component with name ' + component.name + ' was not found!')
+			DEBUG && console.timeEnd(`\tcomponent: ${component.name}`)
+		} else if (DEBUG) {
+			console.warn(`Component with name ${component.name} was not found!`)
 		}
 	}
 	// Instance only required components
@@ -31,23 +31,24 @@ module.exports = function(components) {
 		push: init
 	}
 
-	if(DEBUG) console.timeEnd('Components initialization')
-	if(DEBUG) console.log('Instances', instances)
+	DEBUG && console.timeEnd('Components initialization')
+	DEBUG && console.log('Instances', instances)
 
 	//
 	// Print timing data on page load
 	//
-	if(DEBUG) {
+	if (DEBUG) {
 		function printPerfStats() {
 			var timing = window.performance.timing
 			console.log('Performance:\n' +
-				'\tdns: \t\t' + (timing.domainLookupEnd - timing.domainLookupStart) + 'ms\n' +
-				'\tconnect: \t' + (timing.connectEnd - timing.connectStart) + 'ms\n' +
-				'\tttfb: \t\t' + (timing.responseStart - timing.connectEnd) + 'ms\n' +
-				'\tbasePage: \t' + (timing.responseEnd - timing.responseStart) + 'ms\n' +
-				'\tfrontEnd: \t' + (timing.loadEventStart - timing.responseEnd) + 'ms\n'
+				`\tdns: \t\t ${timing.domainLookupEnd - timing.domainLookupStart} ms\n` +
+				`\tconnect: \t ${timing.connectEnd - timing.connectStart} ms\n` +
+				`\tttfb: \t\t ${timing.responseStart - timing.connectEnd} ms\n` +
+				`\tbasePage: \t ${timing.responseEnd - timing.responseStart} ms\n` +
+				`\tfrontEnd: \t ${timing.loadEventStart - timing.responseEnd} ms\n`
 			)
 		}
+
 		window.addEventListener('load', () => setTimeout(printPerfStats, 1000))
 	}
 }

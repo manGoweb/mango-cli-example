@@ -13,7 +13,7 @@ var eventSplitter = /^(\S+)\s*(.*)$/
  *
  * @author Matěj Šimek <email@matejsimek.com> (http://www.matejsimek.com)
  */
-class Component {
+module.exports = class Component {
 
 	/**
 	 * @constructor
@@ -35,10 +35,8 @@ class Component {
 	 * Component listeners
 	 *
 	 * Format:
-	 * 	- "type": "handlerName"
-	 * 	- "type<space>.selector": "handlerName"
-	 *
-	 * @param {Component~eventHandler} event handler which is a component method
+	 *  - "type": "handlerName"
+	 *  - "type<space>.selector": "handlerName"
 	 */
 	get listeners() {
 		return {
@@ -53,13 +51,13 @@ class Component {
 		let self = this
 		let listeners = this.listeners
 
-		for(let event in listeners) {
+		for (let event in listeners) {
 			let type = event.trim()
 			let selector = false
 			let callback = this[listeners[event]]
 
 			let split = event.match(eventSplitter)
-			if(split) {
+			if (split) {
 				type = split[1]
 				selector = split[2]
 			}
@@ -73,11 +71,11 @@ class Component {
 			 * @param {Object} data - optional data passed with event
 			 * @this {Element} - an element that caught the event
 			 */
-			let listener = function(e, data) {
-				callback.call(this, e, self, data)
+			let listener = function (event, data) {
+				callback.call(this, event, self, data)
 			}
 
-			if(selector){
+			if (selector) {
 				this.$el.on(type, selector, listener)
 			} else {
 				this.$el.on(type, listener)
@@ -105,15 +103,16 @@ class Component {
 
 	/**
 	 * Returns a child
-	 * @param  {string} CSS selector
+	 * @param  {string} selector - CSS selector
 	 * @return {jQuery|null}
 	 */
 	child(selector) {
-		var result = this.$el.find(selector)
-		if(!result.length) return null
-		else return result.eq(0)
+		var $result = this.$el.find(selector)
+
+		if (!$result.length) {
+			return null
+		}
+		return $result.eq(0)
 	}
 
 }
-
-module.exports = Component
