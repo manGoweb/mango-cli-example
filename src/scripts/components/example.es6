@@ -8,7 +8,7 @@ var Component = require('./component')
  * - DOM event listeners are in Backbone style
  *
  */
-module.exports = class extends Component {
+module.exports = class Example extends Component {
 
 	constructor(el, data) {
 		super(el, data)
