@@ -27,7 +27,7 @@ module.exports = class Shapes extends Component {
 			if (status == 'success') {
 				$(document.body).prepend(response)
 			} else {
-				this.injectSprite()
+				setTimeout(() => this.injectSprite(), 1000 * 10)
 			}
 		}, 'text')
 	}
