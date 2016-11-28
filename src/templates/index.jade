@@ -2,13 +2,15 @@ extends layouts/default
 
 append vars
 	- var page = 'index'
-	- var description = 'Sample project structure used in manGoweb'
+	- var description = manifest.description
 
 block content
 
 	main.layout(role='main')
 
-		h1= global.title
+		h1= manifest.short_name
+
+		p= manifest.description
 
 		include parts/example
 

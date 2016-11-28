@@ -16,6 +16,7 @@ static:
   - src/fonts/**
   - node_modules/lt-ie-9/lt-ie-9.min.js
   - node_modules/jquery/dist/jquery.min.js
+  - src/data/manifest.json
 templates:
   - src/templates/*.jade
 buildstamp:
@@ -26,7 +27,7 @@ dependencies:
   - stylus-normalize
   - jquery
 data:
-  global: src/data/global.json
+  manifest: src/data/manifest.json
 hooks:
   init: mango install
 version: ">=0.27"
