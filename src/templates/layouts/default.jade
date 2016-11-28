@@ -2,6 +2,7 @@ doctype html
 block vars
 	- var title = global.title
 	- var description = ''
+	- var jqueryCDN = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js'
 
 html
 	head
@@ -27,6 +28,10 @@ html
 				{ name: 'shapes', data: { url: './sprites/shapes.svg' } }
 			]
 
+		link(rel='preload', href='./sprites/shapes.svg')
+		link(rel='preload', href='#{jqueryCDN}', as='script', crossorigin)
+		link(rel='preload', href='scripts/#{buildstamp}index.js', as='script')
+
 	body
 
 		block header
@@ -34,5 +39,5 @@ html
 		block footer
 
 		//- Application init
-		script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js', defer)
+		script(src='#{jqueryCDN}', defer)
 		script(src='scripts/#{buildstamp}index.js', defer)
