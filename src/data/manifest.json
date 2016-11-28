@@ -1,0 +1,25 @@
+{
+  "lang": "en",
+  "dir": "ltr",
+  "name": "Mango-cli example",
+  "description": "Sample project structure used at manGoweb",
+  "short_name": "Mango",
+  "icons": [{
+      "src": "../images/icons/36x36.png",
+      "sizes": "36x36"
+    },{
+      "src": "../images/icons/72x72.png",
+      "sizes": "72x72"
+    },{
+      "src": "../images/icons/144x144.png",
+      "sizes": "144x144"
+    },{
+      "src": "../images/icons/192x192.png",
+      "sizes": "192x192"
+  }],
+  "start_url": "../",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#2E2E2E",
+  "background_color": "#FFFFFF"
+}
