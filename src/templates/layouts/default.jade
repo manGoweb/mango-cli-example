@@ -28,16 +28,12 @@ html
 				{ name: 'shapes', data: { url: './sprites/shapes.svg' } }
 			]
 
-		link(rel='preload', href='styles/#{buildstamp}index.css', as='style')
-		link(rel='preload', href='#{jqueryCDN}', as='script')
-		link(rel='preload', href='scripts/#{buildstamp}index.js', as='script')
+		//- Application init
+		script(src='#{jqueryCDN}', defer)
+		script(src='scripts/#{buildstamp}index.js', defer)
 
 	body
 
 		block header
 		block content
 		block footer
-
-		//- Application init
-		script(src='#{jqueryCDN}', defer)
-		script(src='scripts/#{buildstamp}index.js', defer)
