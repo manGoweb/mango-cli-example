@@ -1,0 +1,63 @@
+language: node_js
+node_js:
+  - "7"
+
+compiler: gcc
+sudo: false
+
+os:
+  - linux
+
+osx_image: xcode8
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - gcc-4.8
+      - g++-4.8
+
+before_install:
+  - npm config set python `which python`
+  - if [ $TRAVIS_OS_NAME == "linux" ]; then
+      export CC="gcc-4.8";
+      export CXX="g++-4.8";
+      export LINK="gcc-4.8";
+      export LINKXX="g++-4.8";
+    fi
+  - if [ $TRAVIS_OS_NAME == "osx" ]; then
+      brew install homebrew/science/vips --with-webp --with-graphicsmagick;
+    fi
+  - nvm --version
+  - node --version
+  - npm --version
+  - gcc --version
+  - g++ --version
+
+install:
+  - npm install mango-cli
+  - node node_modules/mango-cli/bin/mango install
+
+script:
+  - node node_modules/mango-cli/bin/mango build
+
+env:
+  global:
+    secure: "a9DX/AEQpuw0RQj0WCBsaFdz1z2Mv2eq4UVIBZnlToXqg7D9olSyhmwR03Vaq0ql/1ZzIvrnjC2sP+ClBCR7JHiFLP1MtvLbkApoe4Bit8HJ95iymsyDeqnFIsL0kasiln3BfaMWGKhDFJ3UAj5zTw01G29T8Be01gYy1+sXd96u1iznRQ+Yxf/JuQhJ4/dbuvbMoTcFGpMAiOiawqzg4bXyTOZaALmsx1ixKsWmFH/qmg7IsGwfoxDuGchqaaQRh2B7lKMBYSLrDBfTRKoNKmAIvRCgtS5sA/9pzMjxFuBvlGmbCf0/hpVg/vSt0Rq1o0qaNzybP0M9Uw5lVzvLE+o+HpbfDTesGQqLsMQYnFotEmrhOQ3flSShCWkLhprkccWsY87CcqEzt7dzc93xvm/UnaTffVqoxNSCPmoqY3GLZI5Rye8AakUYGfLnEKg1E1JJNFaWJDDjFlNkvdf6JgK1dakWkxTQ0IPwC0KmpXCLvKpPoDklFQOA7ZbCS5AtoOoe3PCaLLthAe8iHnVednaPw5c1TqBKEDFxo/BcUlugmPb87ycG+zjPd4tA70EasFsKcQBKE2X0IKK/VkxSmlD7TBZglIOCxGKR9TrzdLMfVGfHiMABqVZPfxoYi0PCQD2cAy85CNVwAO/6V7V0Wvg56zXCWJhfAZlED83ArLI=" # GH_TOKEN=xyz123
+
+after_success:
+  - GIT_REPO="https://$GH_TOKEN@github.com/Onset/mango-cli-example.git"
+  - cd dist
+  - git init
+  - git config user.email "travis@example.com"
+  - git config user.name "Travis CI"
+  - git add .
+  - git commit -m "Deploy"
+  - git push --force --quiet $GIT_REPO master:gh-pages
+
+cache:
+  directories:
+    - $HOME/.node-gyp
+    - $HOME/.npm
+    - node_modules
