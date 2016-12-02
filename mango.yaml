@@ -6,6 +6,7 @@ styles:
   - src/styles/print.styl
 scripts:
   - src/scripts/index.es6
+  - src/scripts/serviceWorker.es6
 images:
   - src/images/**/*.{jpg,png}
 sprites:
