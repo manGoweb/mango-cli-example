@@ -8,10 +8,9 @@ block content
 
 	main.layout(role='main')
 
-		h1= manifest.short_name
+		h1.appName= manifest.short_name
 
 		p= manifest.description
-
 		include parts/example
 		include parts/icons
 
