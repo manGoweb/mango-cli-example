@@ -11,3 +11,8 @@ Init your project
 Run command `mango init your-project-directory-name`.
 
 Oh, that's it? Go to that directory, run `mango dev` and your browser should start up.
+
+Current build preview:
+----------------------
+
+https://onset.github.io/mango-cli-example/
