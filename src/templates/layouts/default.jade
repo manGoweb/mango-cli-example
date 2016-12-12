@@ -2,7 +2,6 @@ doctype html
 block vars
 	- var title = global.title
 	- var description = ''
-	- var keywords = ''
 
 html
 	head
@@ -13,7 +12,6 @@ html
 		title=title
 
 		meta(name='description', content=description)
-		meta(name='keywords', content=keywords)
 
 		link(rel='stylesheet', href='styles/#{buildstamp}index.css', media='screen')
 		link(rel='stylesheet', href='styles/#{buildstamp}print.css', media='print')
