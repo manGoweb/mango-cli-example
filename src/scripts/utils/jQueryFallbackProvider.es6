@@ -2,11 +2,10 @@ var inject = require('./inject')
 
 
 module.exports = function (fallbackUrl, resolveCallback, rejectCallback) {
-	var $ = window.jQuery
 
 	// jQuery is defined
-	if ($) {
-		resolveCallback($)
+	if (window.jQuery) {
+		resolveCallback(window.jQuery)
 		return
 	}
 
