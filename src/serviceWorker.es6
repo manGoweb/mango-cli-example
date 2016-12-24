@@ -10,36 +10,32 @@ self.addEventListener('install', (e) => {
 })
 
 self.addEventListener('fetch', (e) => {
-	e.respondWith(
-		caches.match(e.request)
-			.then((response) => {
-				if (response) {
-					return response;
+	const fetchPromise = caches.match(e.request)
+		.then(response => response || Promise.reject())
+		.catch(() => fetch(e.request.clone()))
+
+	e.respondWith(fetchPromise)
+
+	// Cache response
+	fetchPromise.then((response) => {
+		if (e.request.method === 'GET' && response && response.status === 200 && response.type === 'basic') {
+			// Check if url is not blacklisted
+			let blacklisted = false
+			for(const rule of CACHE_BLACKLIST) {
+				if(response.url.match(rule)) {
+					blacklisted = true
+					break
 				}
-
-				let fetchRequest = e.request.clone()
-
-				return fetch(fetchRequest).then((response) => {
-					if (fetchRequest.method === 'GET' && response && response.status === 200 && response.type === 'basic') {
-						// Check if url is not blacklisted
-						let blacklisted = false
-						for(const rule of CACHE_BLACKLIST) {
-							if(response.url.match(rule)) {
-								blacklisted = true
-								break
-							}
-						}
-						if(!blacklisted) {
-							let responseToCache = response.clone()
-							caches.open(CACHE_NAME).then((cache) => {
-								cache.put(e.request, responseToCache)
-							})
-						}
-					}
-
-					return response
+			}
+			if(!blacklisted) {
+				let responseToCache = response.clone()
+				caches.open(CACHE_NAME).then((cache) => {
+					cache.put(e.request, responseToCache)
 				})
 			}
-		)
-	);
+		}
+	})
+
+
+
 });
