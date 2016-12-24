@@ -1,10 +1,10 @@
 require('./utils/swRegister')
 
-let jQueryFallbackProvider = require('./utils/jQueryFallbackProvider')
-let componentsHandler = require('./componentsHandler')
+const jQueryFallbackProvider = require('./utils/jQueryFallbackProvider')
+const componentsHandler = require('./componentsHandler')
 
 
-let onJQueryAvailable = ($) => {
+const onJQueryAvailable = ($) => {
 	require('./plugins')
 	componentsHandler({
 		'example': require('./components/example'),
@@ -12,7 +12,7 @@ let onJQueryAvailable = ($) => {
 	})
 }
 
-let onJQueryMissing = () => {
+const onJQueryMissing = () => {
 	console.log('jQuery dependency is missing. This page might not work correctly. Please try again later.')
 }
 
