@@ -24,7 +24,7 @@ module.exports = function (components) {
 			}
 
 			const Component = components[component.name] // class
-			const placement = (typeof component.place == 'string') ? document.querySelector(component.place) : component.place // DOM element
+			const placement = (typeof component.place === 'string') ? document.querySelector(component.place) : component.place // DOM element
 			const instance = new Component(placement, component.data || {}) // new instance
 
 			instances.push(instance)

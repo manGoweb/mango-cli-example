@@ -17,14 +17,14 @@ module.exports = function inject(options, successCallback, failCallback) {
 	script.type = 'text/javascript'
 
 	// options is an URL string
-	if (typeof options == 'string') {
+	if (typeof options === 'string') {
 		script.src = options
 		script.async = true
 	}
 
 	// options is an object with script attributes
 	// key 'content' is alias for inline script content
-	else if (typeof options == 'object') {
+	else if (typeof options === 'object') {
 
 		for (const key in options) {
 			if (!options.hasOwnProperty(key)) {
@@ -32,7 +32,7 @@ module.exports = function inject(options, successCallback, failCallback) {
 			}
 			const value = options[key]
 
-			if (key == 'content') {
+			if (key === 'content') {
 				script.appendChild(document.createTextNode(value))
 			} else {
 				script[key] = value

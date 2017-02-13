@@ -24,7 +24,7 @@ module.exports = class Shapes extends Component {
 
 	injectSprite() {
 		$.get(this.data.url, (response, status) => {
-			if (status == 'success') {
+			if (status === 'success') {
 				$(document.body).prepend(response)
 			} else {
 				setTimeout(() => this.injectSprite(), 1000 * 10)
