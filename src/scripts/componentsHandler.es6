@@ -1,7 +1,9 @@
 module.exports = function (components) {
+	let componentsStartTime, colorLog
+
 	if (DEBUG) {
-		var componentsStartTime = performance.now()
-		var colorLog = (message, color) => {
+		componentsStartTime = performance.now()
+		colorLog = (message, color) => {
 			console.log(`%c${message}`, `color: ${color}`)
 		}
 		colorLog('Initializing components...', 'brown')
@@ -10,24 +12,26 @@ module.exports = function (components) {
 	//
 	// Lazy components initialization from initComponents queue
 	//
-	var instances = []
+	const instances = []
 
 	// Init function
-	var init = (component) => {
+	const init = (component) => {
+		let componentStartTime
+
 		if (component.name in components) {
 			if (DEBUG) {
-				var componentStartTime = performance.now()
+				componentStartTime = performance.now()
 			}
 
-			var Component = components[component.name] // class
-			var placement = (typeof component.place == 'string') ? document.querySelector(component.place) : component.place // DOM element
-			var instance = new Component(placement, component.data || {}) // new instance
+			const Component = components[component.name] // class
+			const placement = (typeof component.place == 'string') ? document.querySelector(component.place) : component.place // DOM element
+			const instance = new Component(placement, component.data || {}) // new instance
 
 			instances.push(instance)
 
 			if (DEBUG) {
-				var componentEndTime = performance.now()
-				colorLog(`\tcomponent: ${component.name}: ${Math.round(componentEndTime-componentStartTime)}ms`, 'blue')
+				const componentEndTime = performance.now()
+				colorLog(`\tcomponent: ${component.name}: ${Math.round(componentEndTime - componentStartTime)}ms`, 'blue')
 			}
 		} else if (DEBUG) {
 			console.warn(`Component with name ${component.name} was not found!`)
@@ -42,8 +46,8 @@ module.exports = function (components) {
 	}
 
 	if (DEBUG) {
-		var componentsEndTime = performance.now()
-		colorLog(`Components initialization: ${Math.round(componentsEndTime-componentsStartTime)}ms`, 'blue')
+		const componentsEndTime = performance.now()
+		colorLog(`Components initialization: ${Math.round(componentsEndTime - componentsStartTime)}ms`, 'blue')
 		colorLog('Instances:', 'brown')
 		console.log(instances)
 	}
@@ -53,7 +57,7 @@ module.exports = function (components) {
 	//
 	if (DEBUG) {
 		function printPerfStats() {
-			var timing = window.performance.timing
+			const timing = window.performance.timing
 			colorLog('Performance:', 'brown')
 			colorLog(
 				`\tdns: \t\t ${timing.domainLookupEnd - timing.domainLookupStart} ms\n` +

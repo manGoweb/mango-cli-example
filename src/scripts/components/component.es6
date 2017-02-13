@@ -1,5 +1,5 @@
-var $ = window.jQuery
-var eventSplitter = /^(\S+)\s*(.*)$/
+const $ = window.jQuery
+const eventSplitter = /^(\S+)\s*(.*)$/
 
 /**
  * Abstract component class
@@ -103,7 +103,7 @@ module.exports = class Component {
 	 * @return {jQuery|null}
 	 */
 	child(selector) {
-		var $result = this.$el.find(selector)
+		const $result = this.$el.find(selector)
 
 		if (!$result.length) {
 			return null

@@ -1,5 +1,5 @@
-var Component = require('./component')
-var $ = window.jQuery
+const Component = require('./component')
+const $ = window.jQuery
 
 /**
  * Shapes component class

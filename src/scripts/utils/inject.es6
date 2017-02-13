@@ -10,7 +10,7 @@ const head = document.head || document.getElementsByTagName('head')[0]
  * @author Matěj Šimek <email@matejsimek.com> (http://www.matejsimek.com)
  */
 module.exports = function inject(options, successCallback, failCallback) {
-	var script = document.createElement('script')
+	const script = document.createElement('script')
 
 	script.addEventListener('load', successCallback)
 	script.addEventListener('error', failCallback)
@@ -26,11 +26,11 @@ module.exports = function inject(options, successCallback, failCallback) {
 	// key 'content' is alias for inline script content
 	else if (typeof options == 'object') {
 
-		for (let key in options) {
+		for (const key in options) {
 			if (!options.hasOwnProperty(key)) {
 				continue
 			}
-			var value = options[key]
+			const value = options[key]
 
 			if (key == 'content') {
 				script.appendChild(document.createTextNode(value))

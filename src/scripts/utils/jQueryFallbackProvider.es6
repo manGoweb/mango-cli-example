@@ -1,4 +1,4 @@
-var inject = require('./inject')
+const inject = require('./inject')
 
 
 module.exports = function (fallbackUrl, resolveCallback, rejectCallback) {
