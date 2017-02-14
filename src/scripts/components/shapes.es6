@@ -15,7 +15,7 @@ module.exports = class Shapes extends Component {
 	constructor(element, data) {
 		super(element, data)
 
-		this.supportsSVG = document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#BasicStructure", "1.1")
+		this.supportsSVG = document.implementation.hasFeature('http://www.w3.org/TR/SVG11/feature#BasicStructure', '1.1')
 
 		if (this.supportsSVG) {
 			this.injectSprite()
