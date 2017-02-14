@@ -24,4 +24,4 @@
 			console[method] = noop
 		}
 	}
-})();
+})()
