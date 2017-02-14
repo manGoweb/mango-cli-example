@@ -48,14 +48,14 @@ module.exports = class Component {
 	 * Assign event handlers from this.listeners property
 	 */
 	attachListeners() {
-		let listeners = this.listeners
+		const listeners = this.listeners
 
-		for (let event in listeners) {
+		for (const event in listeners) {
 			let type = event.trim()
 			let selector = false
-			let callback = this[listeners[event]]
+			const callback = this[listeners[event]]
 
-			let split = event.match(eventSplitter)
+			const split = event.match(eventSplitter)
 			if (split) {
 				type = split[1]
 				selector = split[2]
@@ -92,7 +92,7 @@ module.exports = class Component {
 	destroy() {
 		this.detachListeners()
 
-		for (let prop in this) {
+		for (const prop in this) {
 			this[prop] = null
 		}
 	}
