@@ -20,9 +20,9 @@ module.exports = class Example extends Component {
 		}
 	}
 
-	handleClick(e, self) {
+	handleClick(e, data) {
 		e.preventDefault()
-		alert(self.data)
+		alert(this.data)
 	}
 
 }

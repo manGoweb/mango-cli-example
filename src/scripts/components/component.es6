@@ -48,7 +48,6 @@ module.exports = class Component {
 	 * Assign event handlers from this.listeners property
 	 */
 	attachListeners() {
-		let self = this
 		let listeners = this.listeners
 
 		for (let event in listeners) {
@@ -63,17 +62,14 @@ module.exports = class Component {
 			}
 
 			/**
-			 * Handler called when an event occured
+			 * Handler called when an event occurred
 			 *
 			 * @callback Component~eventHandler
 			 * @param {object} event - an event object
-			 * @param {Component} self - current instance
 			 * @param {Object} data - optional data passed with event
 			 * @this {Element} - an element that caught the event
 			 */
-			let listener = function (event, data) {
-				callback.call(this, event, self, data)
-			}
+			let listener = $.proxy(callback, this)
 
 			if (selector) {
 				this.$el.on(type, selector, listener)
