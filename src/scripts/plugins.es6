@@ -5,9 +5,9 @@
 
 // Avoid `console` errors in browsers that lack a console.
 //
-;(function () {
+(() => {
 	let method
-	const noop = function () {}
+	const noop = () => {}
 	const methods = [
 		'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
 		'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',

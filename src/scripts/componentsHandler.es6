@@ -1,4 +1,4 @@
-module.exports = function (components) {
+module.exports = (components) => {
 	let componentsStartTime, colorLog
 
 	if (DEBUG) {
@@ -56,7 +56,7 @@ module.exports = function (components) {
 	// Print timing data on page load
 	//
 	if (DEBUG) {
-		function printPerfStats() {
+		const printPerfStats = () => {
 			const timing = window.performance.timing
 			colorLog('Performance:', 'brown')
 			colorLog(
