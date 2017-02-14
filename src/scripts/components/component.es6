@@ -57,8 +57,7 @@ module.exports = class Component {
 
 			const split = event.match(eventSplitter)
 			if (split) {
-				type = split[1]
-				selector = split[2]
+				[, type, selector] = split
 			}
 
 			/**
