@@ -42,7 +42,7 @@ module.exports = (components) => {
 
 	// Allow lazy init of components after page load
 	initComponents = {
-		push: init
+		push: init,
 	}
 
 	if (DEBUG) {

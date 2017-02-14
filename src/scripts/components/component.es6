@@ -40,7 +40,7 @@ module.exports = class Component {
 	 */
 	get listeners() {
 		return {
-			// 'click .example-child': 'handleClick'
+			// 'click .example-child': 'handleClick',
 		}
 	}
 
