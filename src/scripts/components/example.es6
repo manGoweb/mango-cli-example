@@ -1,4 +1,4 @@
-var Component = require('./component')
+const Component = require('./component')
 
 /**
  * Example component class
@@ -16,7 +16,7 @@ module.exports = class Example extends Component {
 
 	get listeners() {
 		return {
-			'click .example-child': 'handleClick'
+			'click .example-child': 'handleClick',
 		}
 	}
 

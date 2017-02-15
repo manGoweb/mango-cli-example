@@ -9,30 +9,30 @@ const head = document.head || document.getElementsByTagName('head')[0]
  *
  * @author Matěj Šimek <email@matejsimek.com> (http://www.matejsimek.com)
  */
-module.exports = function inject(options, successCallback, failCallback) {
-	var script = document.createElement('script')
+module.exports = (options, successCallback, failCallback) => {
+	const script = document.createElement('script')
 
 	script.addEventListener('load', successCallback)
 	script.addEventListener('error', failCallback)
 	script.type = 'text/javascript'
 
 	// options is an URL string
-	if (typeof options == 'string') {
+	if (typeof options === 'string') {
 		script.src = options
 		script.async = true
 	}
 
 	// options is an object with script attributes
 	// key 'content' is alias for inline script content
-	else if (typeof options == 'object') {
+	else if (typeof options === 'object') {
 
-		for (let key in options) {
+		for (const key in options) {
 			if (!options.hasOwnProperty(key)) {
 				continue
 			}
-			var value = options[key]
+			const value = options[key]
 
-			if (key == 'content') {
+			if (key === 'content') {
 				script.appendChild(document.createTextNode(value))
 			} else {
 				script[key] = value
