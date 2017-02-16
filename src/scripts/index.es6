@@ -1,4 +1,4 @@
-require('./utils/swRegister')
+//require('./utils/swRegister')
 
 const jQueryFallbackProvider = require('./utils/jQueryFallbackProvider')
 const componentsHandler = require('./componentsHandler')
