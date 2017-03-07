@@ -1,9 +1,9 @@
 src_folder: src
 dist_folder: dist
 styles:
-  - src/styles/index.styl
-  - src/styles/oldie.styl
-  - src/styles/print.styl
+  - src/styles/index.sass
+  - src/styles/oldie.sass
+  - src/styles/print.sass
 scripts:
   - src/scripts/index.es6
   #- src/serviceWorker.es6
@@ -25,10 +25,11 @@ buildstamp:
   - dist/scripts/index.js
 dependencies:
   - lt-ie-9
-  - stylus-normalize
+  - normalize-scss
+  - bourbon
   - jquery
 data:
   manifest: src/data/manifest.json
 hooks:
   init: mango install
-version: ">=0.27"
+version: ">=0.30"
