@@ -47,6 +47,11 @@ $break1200M: '(max-width: 1199px)'
 $landscape: '(orientation: landscape)'
 $portrait: '(orientation: portrait)'
 
+// Mixins
+=break($min)
+	@media (min-width: #{$min}px)
+		@content
+
 // Animations
 @keyframes spin
 	0%
