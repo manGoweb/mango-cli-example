@@ -1,0 +1,18 @@
+include ../../mixins/shape
+
+
+section
+	h1 Example component
+
+	.example
+		| Tap the button
+		button.example-child
+			+shape('plus').example-shape
+			span.example-text with some action
+
+	script.
+		initComponents.push({
+			name: 'example',
+			place: '.example',
+			data: 'Hey there!'
+		})
