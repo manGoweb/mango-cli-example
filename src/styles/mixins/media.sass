@@ -31,6 +31,9 @@
 	$media: ''
 	$disjunctionCount: length($breakpoints)
 
+	@if $disjunctionCount == 0
+		@error "The media mixin expects at least one argument! None given."
+
 	@for $i from 1 through $disjunctionCount
 		$conjunction: nth($breakpoints, $i)
 		$conjunctionCount: length($conjunction)
