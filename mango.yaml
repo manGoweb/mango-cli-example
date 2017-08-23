@@ -19,7 +19,7 @@ static:
   - node_modules/jquery/dist/jquery.min.js
   - src/data/manifest.json
 templates:
-  - src/templates/*.jade
+  - src/templates/*.pug
 buildstamp:
   - dist/styles/*.css
   - dist/scripts/index.js

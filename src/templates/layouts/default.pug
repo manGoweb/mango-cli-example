@@ -19,11 +19,11 @@ html(lang=manifest.lang)
 
 		link(rel='icon', type='image/png', href='./images/icons/36x36.png', sizes='36x36')
 
-		link(rel='stylesheet', href='styles/#{buildstamp}index.css', media='screen')
-		link(rel='stylesheet', href='styles/#{buildstamp}print.css', media='print')
+		link(rel='stylesheet', href=`styles/${buildstamp}index.css`, media='screen')
+		link(rel='stylesheet', href=`styles/${buildstamp}print.css`, media='print')
 
 		<!--[if lt IE 9]>
-		link(rel='stylesheet', href='styles/#{buildstamp}oldie.css', media='screen')
+		link(rel='stylesheet', href=`styles/${buildstamp}oldie.css`, media='screen')
 		script(src='node_modules/lt-ie-9/lt-ie-9.min.js')
 		<![endif]-->
 
@@ -35,7 +35,7 @@ html(lang=manifest.lang)
 
 		//- Application init
 		script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js', defer)
-		script(src='scripts/#{buildstamp}index.js', defer)
+		script(src=`scripts/${buildstamp}index.js`, defer)
 
 	body
 
