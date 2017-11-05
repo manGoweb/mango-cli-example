@@ -24,10 +24,11 @@ buildstamp:
   - dist/styles/*.css
   - dist/scripts/index.js
 dependencies:
+  - bourbon
+  - isinview
+  - jquery
   - lt-ie-9
   - normalize-scss
-  - bourbon
-  - jquery
 data:
   manifest: src/data/manifest.json
 hooks:

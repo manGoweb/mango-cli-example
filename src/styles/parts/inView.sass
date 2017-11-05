@@ -1,0 +1,34 @@
+.inView
+	position: relative
+	transition: background-color .3s
+
+	&::before
+		position: absolute
+		top: 50%
+		left: 50%
+		color: #0000FF
+		border-right: 3px solid
+		border-bottom: 3px solid
+		width: 20px
+		height: 20px
+		transform-origin: 100% 100%
+		transform: translate(-100%, -50%) rotate(225deg)
+		content: ''
+
+
+	&.is-in
+		background-color: #99FF99
+
+	&.is-out
+		background-color: #FFAA7F
+
+
+	&.is-top,
+	&.is-bottom
+		&::before
+			//
+
+	&.is-top
+		&::before
+			color: #A500FF
+			transform: translate(-100%, -50%) rotate(45deg)

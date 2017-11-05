@@ -8,6 +8,7 @@ const onJQueryAvailable = ($) => {
 	require('./plugins')
 	componentsHandler({
 		'example': require('./components/example'),
+		'inView': require('./components/inView'),
 		'shapes': require('./components/shapes'),
 	})
 }
