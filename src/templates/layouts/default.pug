@@ -3,6 +3,7 @@ block vars
 	- manifest = manifest || {}
 	- var title = manifest.name
 	- var description = ''
+	- assetPath = assetPath ? assetPath.replace(/\/+$/, '') : ''
 
 html(lang=manifest.lang)
 	head
@@ -12,30 +13,30 @@ html(lang=manifest.lang)
 
 		title=title
 
-		link(rel='manifest', href='data/manifest.json')
+		link(rel='manifest', href='${assetPath}/data/manifest.json')
 		meta(name='theme-color', content=manifest.theme_color)
 
 		meta(name='description', content=description)
 
-		link(rel='icon', type='image/png', href='./images/icons/36x36.png', sizes='36x36')
+		link(rel='icon', type='image/png', href='${assetPath}/images/icons/36x36.png', sizes='36x36')
 
-		link(rel='stylesheet', href=`styles/${buildstamp}index.css`, media='screen')
-		link(rel='stylesheet', href=`styles/${buildstamp}print.css`, media='print')
+		link(rel='stylesheet', href=`${assetPath}/styles/${buildstamp}index.css`, media='screen')
+		link(rel='stylesheet', href=`${assetPath}/styles/${buildstamp}print.css`, media='print')
 
 		<!--[if lt IE 9]>
-		link(rel='stylesheet', href=`styles/${buildstamp}oldie.css`, media='screen')
-		script(src='node_modules/lt-ie-9/lt-ie-9.min.js')
+		link(rel='stylesheet', href=`${assetPath}/styles/${buildstamp}oldie.css`, media='screen')
+		script(src=`${assetPath}/node_modules/lt-ie-9/lt-ie-9.min.js`)
 		<![endif]-->
 
 		// Queue of JS components to initialize
 		script.
 			initComponents = [
-				{ name: 'shapes', data: { url: './sprites/shapes.svg' } }
+				{ name: 'shapes', data: { url: '#{assetPath}/sprites/shapes.svg' } }
 			]
 
 		//- Application init
 		script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js', defer)
-		script(src=`scripts/${buildstamp}index.js`, defer)
+		script(src=`${assetPath}/scripts/${buildstamp}index.js`, defer)
 
 	body
 
