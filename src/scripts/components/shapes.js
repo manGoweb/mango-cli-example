@@ -1,4 +1,4 @@
-const Component = require('./component')
+import Component from './component'
 const $ = window.jQuery
 
 /**
@@ -6,7 +6,7 @@ const $ = window.jQuery
  *
  * - injects SVG sprite into body
  */
-module.exports = class Shapes extends Component {
+export default class Shapes extends Component {
 
 	/**
 	 * @param {HTMLElement} element

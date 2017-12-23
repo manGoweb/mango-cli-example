@@ -9,7 +9,7 @@ const head = document.head || document.getElementsByTagName('head')[0]
  *
  * @author Matěj Šimek <email@matejsimek.com> (http://www.matejsimek.com)
  */
-module.exports = (options, successCallback, failCallback) => {
+export default (options, successCallback, failCallback) => {
 	const script = document.createElement('script')
 
 	script.addEventListener('load', successCallback)

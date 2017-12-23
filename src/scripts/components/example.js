@@ -1,4 +1,4 @@
-const Component = require('./component')
+import Component from './component'
 
 /**
  * Example component class
@@ -8,7 +8,7 @@ const Component = require('./component')
  * - DOM event listeners are in Backbone style
  *
  */
-module.exports = class Example extends Component {
+export default class Example extends Component {
 
 	constructor(el, data) {
 		super(el, data)

@@ -1,14 +1,15 @@
-//require('./utils/swRegister')
+//import './utils/swRegister'
+import './plugins'
+import jQueryFallbackProvider from './utils/jQueryFallbackProvider'
+import componentsHandler from './componentsHandler'
 
-const jQueryFallbackProvider = require('./utils/jQueryFallbackProvider')
-const componentsHandler = require('./componentsHandler')
-
+import example from './components/example'
+import shapes from './components/shapes'
 
 const onJQueryAvailable = ($) => {
-	require('./plugins')
 	componentsHandler({
-		'example': require('./components/example'),
-		'shapes': require('./components/shapes'),
+		example,
+		shapes,
 	})
 }
 

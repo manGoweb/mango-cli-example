@@ -1,4 +1,4 @@
-module.exports = (components) => {
+export default (components) => {
 	let componentsStartTime, colorLog
 
 	if (DEBUG) {

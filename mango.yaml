@@ -5,8 +5,8 @@ styles:
   - src/styles/oldie.sass
   - src/styles/print.sass
 scripts:
-  - src/scripts/index.es6
-  #- src/serviceWorker.es6
+  - src/scripts/index.js
+  #- src/serviceWorker.js
 images:
   - src/images/**/*.{jpg,png}
 sprites:

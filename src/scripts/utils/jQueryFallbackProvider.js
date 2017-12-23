@@ -1,7 +1,7 @@
-const inject = require('./inject')
+import inject from './inject'
 
 
-module.exports = (fallbackUrl, resolveCallback, rejectCallback) => {
+export default (fallbackUrl, resolveCallback, rejectCallback) => {
 
 	// jQuery is defined
 	if (window.jQuery) {
