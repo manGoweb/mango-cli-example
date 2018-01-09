@@ -26,7 +26,7 @@ buildstamp:
 dependencies:
   - lt-ie-9
   - normalize-scss
-  - bourbon
+  - bourbon@^4.3.4
   - jquery
 data:
   manifest: src/data/manifest.json
