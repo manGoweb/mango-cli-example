@@ -1,5 +1,6 @@
 //import './utils/swRegister'
 import './plugins'
+import 'bootstrap'
 import jQueryFallbackProvider from './utils/jQueryFallbackProvider'
 import componentsHandler from './componentsHandler'
 
