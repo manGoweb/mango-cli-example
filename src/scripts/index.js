@@ -11,6 +11,11 @@ import shapes from './components/shapes'
 import toggler from './components/toggler'
 
 const onJQueryAvailable = ($) => {
+	// Prepare shorthands
+	window.win = $(window)
+	window.dc = $(document)
+	window.body = $(document.body)
+
 	// Init components
 	componentsHandler({
 		emmiter,
