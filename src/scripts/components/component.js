@@ -1,4 +1,3 @@
-const $ = window.jQuery
 const eventSplitter = /^(\S+)\s*(.*)$/
 
 /**

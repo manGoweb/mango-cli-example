@@ -1,5 +1,4 @@
 import Component from './component'
-const $ = window.jQuery
 
 /**
  * Shapes component class
