@@ -1,4 +1,8 @@
-mixin shape(name)
+mixin shape(name, title)
 
 	svg(class='shape shape-' + name)&attributes(attributes)
+
+		if title
+			title= title
+
 		use(xlink:href='#shape-' + name)
