@@ -1,9 +1,13 @@
 doctype html
 block vars
-	- manifest = manifest || {}
-	- var title = manifest.name
-	- var description = ''
-	- assetPath = assetPath ? assetPath.replace(/\/+$/, '') : ''
+	-
+		manifest = manifest || {}
+		var title = manifest.name
+		var description = ''
+		assetPath = assetPath ? assetPath.replace(/\/+$/, '') : ''
+
+include ../mixins/capture
+include ../mixins/shape
 
 html(lang=manifest.lang)
 	head
@@ -35,7 +39,7 @@ html(lang=manifest.lang)
 			]
 
 		//- Application init
-		script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', defer)
+		script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', defer)
 		script(src=`${assetPath}/scripts/${buildstamp}index.js`, defer)
 
 	body
