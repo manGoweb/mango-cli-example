@@ -4,11 +4,15 @@ import 'bootstrap'
 import jQueryFallbackProvider from './utils/jQueryFallbackProvider'
 import componentsHandler from './componentsHandler'
 
+// Components
+import emmiter from './components/emmiter'
 import example from './components/example'
 import shapes from './components/shapes'
 
 const onJQueryAvailable = ($) => {
+	// Init components
 	componentsHandler({
+		emmiter,
 		example,
 		shapes,
 	})
