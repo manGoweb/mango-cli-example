@@ -12,8 +12,14 @@
     "stylus-normalize": "^3.0.3"
   },
   "devDependencies": {
+    "compression": "^1.7.2",
+    "express": "^4.16.2"
   },
   "scripts": {
+    "start": "node server.js",
+    "dev": "PORT=8080 node server.js",
+    "heroku-prebuild": "npm install mango-cli",
+    "heroku-postbuild": "mango build"
   },
   "repository": {
     "type": "git",
