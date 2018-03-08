@@ -8,6 +8,7 @@ import componentsHandler from './componentsHandler'
 import emmiter from './components/emmiter'
 import example from './components/example'
 import shapes from './components/shapes'
+import toggler from './components/toggler'
 
 const onJQueryAvailable = ($) => {
 	// Init components
@@ -15,6 +16,7 @@ const onJQueryAvailable = ($) => {
 		emmiter,
 		example,
 		shapes,
+		toggler,
 	})
 }
 
