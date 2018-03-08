@@ -24,10 +24,13 @@ export default (components) => {
 			}
 
 			const Component = components[component.name] // class
-			const placement = (typeof component.place === 'string') ? document.querySelector(component.place) : component.place // DOM element
-			const instance = new Component(placement, component.data || {}) // new instance
 
-			instances.push(instance)
+			const places = [].concat(component.place)
+			places.forEach(place => {
+				const placement = (typeof place === 'string') ? document.querySelector(place) : place // DOM element
+				const instance = new Component(placement, component.data || {}) // new instance
+				instances.push(instance)
+			})
 
 			if (DEBUG) {
 				const componentEndTime = performance.now()
