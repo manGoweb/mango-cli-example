@@ -23,14 +23,8 @@ templates:
 buildstamp:
   - dist/styles/*.css
   - dist/scripts/index.js
-dependencies:
-  - bootstrap
-  - bourbon@^4.3.4
-  - jquery
-  - lt-ie-9
-  - popper.js
 data:
   manifest: src/data/manifest.json
 hooks:
-  init: mango install
+  init: npm install
 version: "~1.6.0"

@@ -1,0 +1,28 @@
+{
+  "name": "mango-cli-example",
+  "version": "0.0.0",
+  "description": "Ready to eat mango-cli project",
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "bourbon": "^4.3.3",
+    "jquery": "^3.3.1",
+    "lt-ie-9": "^0.1.0",
+    "normalize-scss": "^7.0.1",
+    "popper.js": "^1.12.9",
+    "stylus-normalize": "^3.0.3"
+  },
+  "devDependencies": {
+  },
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manGoweb/mango-cli-example.git"
+  },
+  "author": "manGoweb s.r.o. <info@mangoweb.cz> (www.mangoweb.cz)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/manGoweb/mango-cli-example/issues"
+  },
+  "homepage": "https://github.com/manGoweb/mango-cli-example#readme"
+}
