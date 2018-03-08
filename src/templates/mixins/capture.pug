@@ -1,0 +1,23 @@
+//-
+//- A hack of pug internals to capture HTML output to a variable
+//- Source: https://github.com/pugjs/pug/issues/1468#issuecomment-261868910
+
+//- Parameters:
+//-		ref - reference to an object to which add a result property with HTML
+//-
+//- Usage
+//- 	- var cap1 = {}
+//-
+//- 	+capture(cap1)
+//- 		any pug code
+//-
+//- 	div= cap1.result
+//-
+mixin capture(ref)
+	- var oldBuf = pug_html
+	- pug_html = ''
+
+	block
+
+	- ref.result = pug_html
+	- pug_html = oldBuf
