@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "7"
+  - "8"
 
 compiler: gcc
 sudo: false
@@ -36,11 +36,10 @@ before_install:
   - g++ --version
 
 install:
-  - npm install mango-cli
-  - node node_modules/mango-cli/bin/mango install
+  - npm install
 
 script:
-  - node node_modules/mango-cli/bin/mango build
+  - npx mango-cli build
 
 env:
   global:
