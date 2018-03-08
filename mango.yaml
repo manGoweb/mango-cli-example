@@ -11,7 +11,7 @@ images:
   - src/images/**/*.{jpg,png}
 sprites:
   -
-    path: src/images/sources/*.svg
+    path: src/sprites/*.svg
     name: false
 static:
   - src/fonts/**
