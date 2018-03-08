@@ -45,7 +45,9 @@ export default (components) => {
 
 	// Allow lazy init of components after page load
 	initComponents = {
-		push: init,
+		push: function() {
+			Array.from(arguments).map(init)
+		},
 	}
 
 	if (DEBUG) {
