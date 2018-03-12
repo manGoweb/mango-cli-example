@@ -27,4 +27,4 @@ data:
   manifest: src/data/manifest.json
 hooks:
   init: npm install
-version: "~1.6.0"
+version: "~1.7.0"
