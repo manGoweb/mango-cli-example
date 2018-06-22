@@ -1,5 +1,3 @@
-
-
 export type ComponentConstructor<D> = new (element: HTMLElement, data: D) => Component<D>
 
 
