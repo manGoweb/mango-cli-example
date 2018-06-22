@@ -6,20 +6,19 @@ export default class Component<D> {
 	protected readonly el: HTMLElement
 	protected readonly data: D
 
+	getListeners = (): EventListeners => []
+
 
 	constructor(element: HTMLElement, data: D) {
 		this.el = element
 		this.data = data
+	}
+
+	setup() {
 		this.attachListeners()
 
 		this.initialize()
 	}
-
-
-	get listeners(): EventListeners {
-		return []
-	}
-
 
 	initialize() {
 
@@ -27,7 +26,7 @@ export default class Component<D> {
 
 
 	private attachListeners() {
-		const listeners = this.listeners
+		const listeners = this.getListeners()
 
 		for (let i = 0, listenersCount = listeners.length; i < listenersCount; i++) {
 			const listenersSpec = listeners[i]

@@ -8,16 +8,14 @@ interface ExampleData {
 
 export default class Example extends Component<ExampleData> {
 
+	getListeners = (): EventListeners => [
+		['click', this.handleClick],
+		['click', '.example-child', this.handleDelegateClick],
+	]
+
 
 	initialize() {
 		// Initialize your component.
-	}
-
-	get listeners(): EventListeners {
-		return [
-			['click', this.handleClick],
-			['click', '.example-child', this.handleDelegateClick],
-		]
 	}
 
 	handleDelegateClick(e: DelegateEvent<'click'>): void {

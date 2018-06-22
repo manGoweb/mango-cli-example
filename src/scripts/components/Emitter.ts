@@ -19,14 +19,13 @@ export default class Emitter extends Component<EmitterData> {
 
 	events: Events = []
 
+	getListeners = (): EventListeners => [
+		['click', this.handleClick],
+	]
+
+
 	initialize() {
 		this.events = Array.isArray(this.data.events) ? this.data.events : [this.data.events]
-	}
-
-	get listeners(): EventListeners {
-		return [
-			['click', this.handleClick]
-		]
 	}
 
 	handleClick(e: MouseEvent) {

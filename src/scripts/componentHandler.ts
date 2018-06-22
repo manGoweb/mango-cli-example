@@ -40,7 +40,9 @@ export default (components: Array<ComponentConstructor<any>>) => {
 					: (component.place || document.body)
 
 			if (placement) {
-				new Component(placement, component.data || {})
+				const instance = new Component(placement, component.data || {})
+
+				instance.setup()
 			} else if (DEBUG) {
 				console.warn(
 					`Trying to initialize component '${component.name}' but its selector '${component.place}' was not found`
