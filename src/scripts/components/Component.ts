@@ -17,10 +17,10 @@ export default class Component<D> {
 	setup() {
 		this.attachListeners()
 
-		this.initialize()
+		this.init()
 	}
 
-	initialize() {
+	init() {
 
 	}
 
