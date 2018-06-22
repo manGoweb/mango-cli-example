@@ -33,19 +33,26 @@ export default (components: Array<ComponentConstructor<any>>) => {
 			}
 
 			const Component = componentsByName[component.name] // class
+
 			const placement =
-				(typeof component.place === 'string'
+				typeof component.place === 'string'
 					? document.querySelector(component.place)
-					: component.place) // DOM element
-					|| document.body
-			new Component(placement, component.data || {})
+					: (component.place || document.body)
+
+			if (placement) {
+				new Component(placement, component.data || {})
+			} else if (DEBUG) {
+				console.warn(
+					`Trying to initialize component '${component.name}' but its selector '${component.place}' was not found`
+				)
+			}
 
 			if (DEBUG) {
 				const componentEndTime = performance.now()
 				console.log(`\tComponent: ${component.name}: ${Math.round(componentEndTime - componentStartTime)}ms`)
 			}
 		} else if (DEBUG) {
-			console.warn(`Component with name ${component.name} was not found! `)
+			console.warn(`Component with name ${component.name} was not found!`)
 		}
 	}
 
