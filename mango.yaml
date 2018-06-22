@@ -5,7 +5,7 @@ styles:
   - src/styles/oldie.sass
   - src/styles/print.sass
 scripts:
-  - src/scripts/index.js
+  - src/scripts/index.ts
   #- src/serviceWorker.js
 images:
   - src/images/**/*.{jpg,png}
@@ -27,4 +27,4 @@ data:
   manifest: src/data/manifest.json
 hooks:
   init: npm install
-version: "~1.7.0"
+version: "^2.0"

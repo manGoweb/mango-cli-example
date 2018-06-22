@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src/scripts",
+    "jsx": "react",
+    "lib": [
+      "DOM",
+      "ES6",
+      "ScriptHost",
+      "DOM.Iterable"
+    ],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "paths": {},
+    "sourceMap": true,
+    "strict": true,
+    "target": "es5"
+  }
+}
