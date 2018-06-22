@@ -1,4 +1,3 @@
-
 type DelegateEvent<E extends keyof HTMLElementEventMap> = HTMLElementEventMap[E] & {
 	delegateTarget: HTMLElement
 }
