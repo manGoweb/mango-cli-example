@@ -35,11 +35,10 @@ html(lang=manifest.lang)
 		// Queue of JS components to initialize
 		script.
 			initComponents = [
-				{ name: 'shapes', data: { url: '#{assetPath}/sprites/shapes.svg' } }
+				{ name: 'Shapes', data: { url: '#{assetPath}/sprites/shapes.svg' } }
 			]
 
 		//- Application init
-		script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', defer)
 		script(src=`${assetPath}/scripts/${buildstamp}index.js`, defer)
 
 	body
