@@ -1,4 +1,4 @@
-const head: HTMLHeadElement = document.head || document.getElementsByTagName('head').item(0)
+const head: HTMLHeadElement = document.head
 const noop = () => {
 }
 
