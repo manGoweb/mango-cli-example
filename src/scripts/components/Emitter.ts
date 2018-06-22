@@ -24,7 +24,7 @@ export default class Emitter extends Component<EmitterData> {
 	]
 
 
-	initialize() {
+	init() {
 		this.events = Array.isArray(this.data.events) ? this.data.events : [this.data.events]
 	}
 

@@ -14,7 +14,7 @@ export default class Example extends Component<ExampleData> {
 	]
 
 
-	initialize() {
+	init() {
 		// Initialize your component.
 	}
 
