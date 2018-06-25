@@ -1,3 +1,5 @@
+import matchesSelector from '../utils/matchesSelector'
+
 export type ComponentConstructor<D> = new (element: HTMLElement, data: D) => Component<D>
 
 
@@ -42,7 +44,7 @@ export default class Component<D> {
 					let target = e.target
 
 					while (target && target instanceof HTMLElement && target !== this.el) {
-						if (target.matches(delegateSelector)) {
+						if (matchesSelector(target, delegateSelector)) {
 							const delegateEvent: any = e
 							delegateEvent.delegateTarget = target
 
