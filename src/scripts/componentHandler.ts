@@ -7,7 +7,7 @@ interface ComponentDefinition {
 }
 
 declare let initComponents: Array<ComponentDefinition> | {
-	push: (name: ComponentDefinition) => void
+	push: (definition: ComponentDefinition) => void
 }
 
 
