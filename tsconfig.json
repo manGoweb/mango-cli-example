@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
     "baseUrl": "src/scripts",
+    "experimentalDecorators": true,
     "jsx": "react",
     "lib": [
       "DOM",
