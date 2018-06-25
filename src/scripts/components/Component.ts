@@ -43,7 +43,7 @@ export default class Component<D> {
 
 					while (target && target instanceof HTMLElement && target !== this.el) {
 						if (target.matches(delegateSelector)) {
-							const delegateEvent = Object.create(e)
+							const delegateEvent: any = e
 							delegateEvent.delegateTarget = target
 
 							return callback.call(this, delegateEvent)
