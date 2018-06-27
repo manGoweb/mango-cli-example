@@ -2,7 +2,6 @@ src_folder: src
 dist_folder: dist
 styles:
   - src/styles/index.sass
-  - src/styles/oldie.sass
   - src/styles/print.sass
 scripts:
   - src/scripts/index.ts

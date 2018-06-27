@@ -27,11 +27,6 @@ html(lang=manifest.lang)
 		link(rel='stylesheet', href=`${assetPath}/styles/${buildstamp}index.css`, media='screen')
 		link(rel='stylesheet', href=`${assetPath}/styles/${buildstamp}print.css`, media='print')
 
-		<!--[if lt IE 9]>
-		link(rel='stylesheet', href=`${assetPath}/styles/${buildstamp}oldie.css`, media='screen')
-		script(src=`${assetPath}/node_modules/lt-ie-9/lt-ie-9.min.js`)
-		<![endif]-->
-
 		// Queue of JS components to initialize
 		script.
 			initComponents = [
