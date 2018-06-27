@@ -1,6 +1,10 @@
 import matchesSelector from '../utils/matchesSelector'
 
-export type ComponentConstructor<D> = new (element: HTMLElement, data: D) => Component<D>
+interface NamedComponent {
+	componentName?: string
+}
+
+export type ComponentConstructor<D> = NamedComponent & (new (element: HTMLElement, data: D) => Component<D>)
 
 
 export default class Component<D> {
