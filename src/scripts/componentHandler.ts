@@ -1,7 +1,7 @@
 import Component, { ComponentConstructor } from 'components/Component'
 
 
-export default (components: Array<ComponentConstructor<any>>, initializer: ComponentInitializerName) => {
+export default (components: Array<ComponentConstructor<any>>, initializerName: ComponentInitializerName = 'initComponents') => {
 	const componentsByName: {
 		[name: string]: typeof Component
 	} = {}
@@ -48,7 +48,7 @@ export default (components: Array<ComponentConstructor<any>>, initializer: Compo
 		}
 	}
 
-	const componentInitializer: ComponentInitializer = window[initializer]
+	const componentInitializer: ComponentInitializer = window[initializerName]
 
 	// Instance only required components
 	if (Array.isArray(componentInitializer)) {
@@ -56,7 +56,7 @@ export default (components: Array<ComponentConstructor<any>>, initializer: Compo
 	}
 
 	// Allow lazy init of components after page load
-	window[initializer] = {
+	window[initializerName] = {
 		push: init,
 	}
 }
