@@ -8,6 +8,9 @@ interface ExampleData {
 
 export default class Example extends Component<ExampleData> {
 
+	// Optionally declare this to use a different name than the class name, in this case `Example`
+	// static componentName = 'MyFancyExample'
+
 	getListeners = (): EventListeners => [
 		['click', this.handleClick],
 		['click', '.example-child', this.handleDelegateClick],
