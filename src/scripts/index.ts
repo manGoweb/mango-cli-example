@@ -10,4 +10,4 @@ import Shapes from './components/Shapes'
 componentHandler([
 	Example,
 	Shapes,
-])
+], 'initComponents')

@@ -1,17 +1,7 @@
 import Component, { ComponentConstructor } from 'components/Component'
 
-interface ComponentDefinition {
-	name: string
-	place?: keyof HTMLElementTagNameMap | HTMLElement
-	data?: any
-}
 
-declare let initComponents: Array<ComponentDefinition> | {
-	push: (definition: ComponentDefinition) => void
-}
-
-
-export default (components: Array<ComponentConstructor<any>>) => {
+export default (components: Array<ComponentConstructor<any>>, initializer: ComponentInitializerName) => {
 	const componentsByName: {
 		[name: string]: typeof Component
 	} = {}
@@ -58,13 +48,15 @@ export default (components: Array<ComponentConstructor<any>>) => {
 		}
 	}
 
+	const componentInitializer: ComponentInitializer = window[initializer]
+
 	// Instance only required components
-	if (Array.isArray(initComponents)) {
-		initComponents.map(init)
+	if (Array.isArray(componentInitializer)) {
+		componentInitializer.map(init)
 	}
 
 	// Allow lazy init of components after page load
-	initComponents = {
+	window[initializer] = {
 		push: init,
 	}
 }
