@@ -9,3 +9,5 @@ type EventListenerSpec<E extends keyof HTMLElementEventMap> = [E, (event: HTMLEl
 type EventListeners = Array<{
 	[E in keyof HTMLElementEventMap]: DelegateEventListenerSpec<E> | EventListenerSpec<E>
 }[keyof HTMLElementEventMap]>
+
+type Constructor<T> = new (...args: any[]) => T
