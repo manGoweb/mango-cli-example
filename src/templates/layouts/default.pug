@@ -39,6 +39,7 @@ html(lang=manifest.lang)
 			]
 
 		//- Application init
+		script(src=`https://cdn.polyfill.io/v2/polyfill.min.js?features=fetch&flags=gated`, defer)
 		script(src=`${assetPath}/scripts/${buildstamp}index.js`, defer)
 
 	body
