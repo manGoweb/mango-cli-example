@@ -8,7 +8,7 @@ export default (components: Array<ComponentConstructor<any>>, initializerName: C
 
 	for (let i = 0, length = components.length; i < length; i++) {
 		const constructor = components[i]
-		const name = constructor.componentName || constructor.name
+		const name = constructor.componentName
 
 		componentsByName[name] = constructor
 	}

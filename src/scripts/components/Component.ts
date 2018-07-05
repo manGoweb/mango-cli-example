@@ -1,7 +1,7 @@
 import matchesSelector from '../utils/matchesSelector'
 
 interface NamedComponent {
-	componentName?: string
+	componentName: string
 }
 
 export type ComponentConstructor<D> = NamedComponent & (new (element: HTMLElement, data: D) => Component<D>)
