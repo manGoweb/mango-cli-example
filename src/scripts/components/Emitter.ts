@@ -17,6 +17,8 @@ interface EmitterData {
  */
 export default class Emitter extends Component<EmitterData> {
 
+	static componentName = 'Emitter'
+
 	events: Events = []
 
 	getListeners = (): EventListeners => [
