@@ -1,4 +1,4 @@
-import Component, { ComponentConstructor } from 'components/Component'
+import Component, { ComponentConstructor } from './components/Component'
 
 
 export default (components: Array<ComponentConstructor<any>>, initializerName: ComponentInitializerName = 'initComponents') => {
