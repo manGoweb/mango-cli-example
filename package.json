@@ -14,10 +14,13 @@
     "express": "^4.16.2"
   },
   "scripts": {
-    "start": "node server.js",
-    "dev": "PORT=8080 node server.js",
+    "start": "mango dev",
+    "dev": "npm start",
+    "build": "mango build",
+    "serve": "node server.js",
+    "server-dev": "PORT=8080 node server.js",
     "heroku-prebuild": "npm install mango-cli",
-    "heroku-postbuild": "mango build"
+    "heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",
