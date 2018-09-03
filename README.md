@@ -19,6 +19,14 @@ A starter project for [mango-cli](https://github.com/manGoweb/mango-cli) devstac
 
 - `npm run build`
 
+## Serve production build files
+
+- `npm run serve`
+
+	or
+
+- `PORT=3000 npm run serve` # Runs server on custom port 3000
+
 ## Heroku deployment
 
 1. Create a new app: `heroku create`

@@ -15,10 +15,8 @@
   },
   "scripts": {
     "start": "mango dev",
-    "dev": "npm start",
     "build": "mango build",
     "serve": "node server.js",
-    "server-dev": "PORT=8080 node server.js",
     "heroku-prebuild": "npm install mango-cli",
     "heroku-postbuild": "npm run build"
   },
