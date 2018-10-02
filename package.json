@@ -11,7 +11,8 @@
   },
   "devDependencies": {
     "compression": "^1.7.2",
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "typescript": "^3.1.1"
   },
   "scripts": {
     "start": "mango dev",

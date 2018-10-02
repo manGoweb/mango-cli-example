@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "baseUrl": "src/scripts",
     "experimentalDecorators": true,
     "jsx": "react",
