@@ -29,7 +29,11 @@ export default class Shapes extends Component<ShapesData> {
 
 			wrapper.innerHTML = shapes
 
-			body.insertBefore(wrapper.children.item(0), body.firstChild)
+			const el = wrapper.children.item(0)
+
+			if (el) {
+				body.insertBefore(el, body.firstChild)
+			}
 		}).catch(() => {
 			setTimeout(() => this.injectSprite(), 1e4)
 		})
