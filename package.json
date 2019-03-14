@@ -3,15 +3,15 @@
   "version": "0.0.0",
   "description": "Ready to eat mango-cli project",
   "dependencies": {
-    "bootstrap": "^4.0.0",
+    "bootstrap": "^4.3.1",
     "bourbon": "^4.3.3",
     "normalize-scss": "^7.0.1",
-    "popper.js": "^1.12.9",
+    "popper.js": "^1.14.7",
     "stylus-normalize": "^3.0.3"
   },
   "devDependencies": {
-    "compression": "^1.7.2",
-    "express": "^4.16.2"
+    "compression": "^1.7.3",
+    "express": "^4.16.4"
   },
   "scripts": {
     "start": "mango dev",
