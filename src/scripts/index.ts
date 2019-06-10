@@ -3,11 +3,11 @@ import { initializeComponents } from '@mangoweb/scripts-base'
 import './plugins'
 
 import Example from './components/Example'
-import Shapes from './components/Shapes'
+import ShapesIE from './components/ShapesIE'
 
 
 // Sort the components alphabetically…
 initializeComponents([
 	Example,
-	Shapes,
-], 'initComponents')
+	ShapesIE,
+])

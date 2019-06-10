@@ -5,4 +5,7 @@ mixin shape(name, title)
 		if title
 			title= title
 
-		use(xlink:href='#shape-' + name)
+		use(xlink:href=`${assetPath}/sprites/shapes.svg#shape-${name}`)
+
+		//- IE fallback
+		use(xlink:href=`#shape-${name}`)
