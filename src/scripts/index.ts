@@ -1,4 +1,4 @@
-import componentHandler from './componentHandler'
+import { initializeComponents } from '@mangoweb/scripts-base'
 
 import './plugins'
 
@@ -7,7 +7,7 @@ import Shapes from './components/Shapes'
 
 
 // Sort the components alphabetically…
-componentHandler([
+initializeComponents([
 	Example,
 	Shapes,
-])
+], 'initComponents')

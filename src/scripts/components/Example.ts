@@ -1,4 +1,4 @@
-import Component from './Component'
+import { Component } from '@mangoweb/scripts-base'
 
 interface ExampleData {
 	name: string,
@@ -7,7 +7,6 @@ interface ExampleData {
 
 
 export default class Example extends Component<ExampleData> {
-
 	static componentName = 'Example'
 
 	getListeners = (): EventListeners => [
