@@ -1,20 +1,24 @@
 import { Component } from '@mangoweb/scripts-base'
 
-interface ShapesData {
+interface ShapesIEData {
 	url: string
 }
 
 /**
- * Shapes component class
+ * ShapesIE component class (Internet Explorer fallback)
  *
  * - injects SVG sprite into body
  */
-export default class Shapes extends Component<ShapesData> {
+export default class ShapesIE extends Component<ShapesIEData> {
 
-	static componentName = 'Shapes'
+	static componentName = 'ShapesIE'
 
 	init() {
-		document.implementation.hasFeature('http://www.w3.org/TR/SVG11/feature#BasicStructure', '1.1') && this.injectSprite()
+		if (window.navigator.userAgent.indexOf('MSIE ') < 0 && !navigator.userAgent.match(/Trident.*rv\:11\./)) {
+			return
+		}
+
+		this.injectSprite()
 	}
 
 	injectSprite(): void {
@@ -34,7 +38,8 @@ export default class Shapes extends Component<ShapesData> {
 			if (el) {
 				body.insertBefore(el, body.firstChild)
 			}
-		}).catch(() => {
+		}).catch((error) => {
+			console.error(error)
 			setTimeout(() => this.injectSprite(), 1e4)
 		})
 	}
