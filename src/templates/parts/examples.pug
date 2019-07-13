@@ -1,4 +1,18 @@
 include examples/component
+.track#track_1(style='background: pink; height: 500px;') Track me 1
 include examples/icons
+.track#track_2(style='background: lightgreen; height: 500px;') Track me 2
 include examples/sampleContent
+.track#track_3(style='background: lightblue; height: 500px;') Track me 3
 include examples/buttons
+.track#track_4(style='background: lightyellow; height: 500px;') Track me 4
+
+script.
+	initComponents.push({
+		name: 'InView',
+		place: 'body',
+		data: {
+			targets: '.track',
+			isInViewClass: 'I\'m-walking-here',
+		},
+	})
