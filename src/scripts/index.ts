@@ -3,7 +3,7 @@ import { initializeComponents } from '@mangoweb/scripts-base'
 import './plugins'
 
 import Example from './components/Example'
-import { InView } from './components/InView'
+import { InView } from '@mangoweb/in-view'
 import Shapes from './components/Shapes'
 
 
